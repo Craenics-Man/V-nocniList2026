@@ -1,0 +1,587 @@
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080d12;
+    color: #e5e7eb;
+    font-family: Consolas, monospace;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+    --green: #22c55e;
+    --green-light: #86efac;
+    --red: #ef4444;
+    --background: #080d12;
+    --card: #111820;
+    --border: #263442;
+    --text-muted: #9ca3af;
+}
+
+/* =========================
+   CHRISTMAS LIGHTS
+========================= */
+
+.lights {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #263442;
+}
+
+.lights span {
+    width: 12px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 12px var(--green);
+    animation: blink 2s infinite alternate;
+}
+
+.lights span:nth-child(2n) {
+    background: var(--red);
+    box-shadow: 0 0 12px var(--red);
+    animation-delay: 0.5s;
+}
+
+.lights span:nth-child(3n) {
+    animation-delay: 1s;
+}
+
+@keyframes blink {
+    from {
+        opacity: 0.45;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.green {
+    color: var(--green);
+}
+
+.nav-status {
+    font-size: 12px;
+    color: var(--green-light);
+    border: 1px solid #1d4732;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 8px var(--green);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    text-align: center;
+    padding: 100px 20px 110px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.terminal-line {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 7vw, 75px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+.gradient {
+    background: linear-gradient(
+        90deg,
+        #22c55e,
+        #86efac,
+        #ef4444
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.hero-badge {
+    display: inline-block;
+    border: 1px solid #263442;
+    background: #111820;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+.intro {
+    max-width: 600px;
+    margin: auto;
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 13px 25px;
+    background: var(--green);
+    color: #06110a;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px #22c55e55;
+    background: #86efac;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+    margin-top: 50px;
+}
+
+.countdown-title {
+    color: var(--green);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.time-box {
+    background: #111820;
+    border: 1px solid #263442;
+    border-radius: 12px;
+    min-width: 85px;
+    padding: 15px;
+}
+
+.time-box span {
+    display: block;
+    color: var(--green-light);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.time-box small {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* =========================
+   SECTION
+========================= */
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px 80px;
+}
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-label {
+    color: var(--green);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: 35px;
+    color: white;
+}
+
+.section-description {
+    color: var(--text-muted);
+}
+
+/* =========================
+   GIFT CARDS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.gift-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.gift-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--green);
+    box-shadow: 0 10px 40px #22c55e12;
+}
+
+.gift-card.featured {
+    border-color: #24623e;
+}
+
+.gift-card.surprise {
+    border-style: dashed;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.number {
+    font-size: 14px;
+    color: var(--green);
+    font-weight: bold;
+}
+
+.category {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.gift-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.gift-card h3 {
+    font-size: 25px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.gift-description {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background: #18232e;
+    border: 1px solid #263442;
+    color: var(--green-light);
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    max-width: 1100px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+.message-box {
+    text-align: center;
+    padding: 55px 30px;
+    border: 1px solid #263442;
+    background: linear-gradient(
+        135deg,
+        #111820,
+        #10251b
+    );
+    border-radius: 20px;
+}
+
+.message-icon {
+    font-size: 45px;
+}
+
+.message-box h2 {
+    font-size: 27px;
+    margin: 20px 0;
+    color: var(--green-light);
+}
+
+.message-box p {
+    max-width: 700px;
+    margin: auto;
+    color: var(--text-muted);
+}
+
+/* =========================
+   SURPRISE BUTTON
+========================= */
+
+.surprise-button {
+    margin-top: 25px;
+    padding: 13px 22px;
+    background: #14251b;
+    border: 1px solid var(--green);
+    color: var(--green-light);
+    border-radius: 10px;
+    font-family: Consolas, monospace;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.surprise-button:hover {
+    background: var(--green);
+    color: #08110b;
+    transform: translateY(-3px);
+}
+
+.surprise-message {
+    display: none;
+    margin-top: 25px !important;
+    padding: 20px;
+    border: 1px solid #24623e;
+    border-radius: 12px;
+    background: #10251b;
+    color: var(--green-light) !important;
+}
+
+.surprise-message.visible {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   TERMINAL
+========================= */
+
+.terminal {
+    max-width: 900px;
+    margin: 80px auto;
+    width: calc(100% - 40px);
+    border: 1px solid #263442;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #05090c;
+    box-shadow: 0 20px 60px #00000040;
+}
+
+.terminal-header {
+    background: #151c24;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #263442;
+}
+
+.terminal-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ef4444;
+}
+
+.yellow {
+    background: #eab308;
+}
+
+.green-circle {
+    background: #22c55e;
+}
+
+.terminal-title {
+    margin-left: 10px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.terminal-body {
+    padding: 25px;
+    font-size: 14px;
+}
+
+.terminal-output {
+    color: var(--green-light);
+    margin: 8px 0 20px;
+}
+
+.cursor {
+    animation: cursor-blink 1s infinite;
+}
+
+@keyframes cursor-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #263442;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.footer-year {
+    margin-top: 10px;
+    font-size: 11px;
+}
+
+/* =========================
+   JAVASCRIPT SNOW
+========================= */
+
+#snow-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.snowflake {
+    position: absolute;
+    top: -30px;
+    color: white;
+    user-select: none;
+    animation: snowfall linear forwards;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 700px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .message-box h2 {
+        font-size: 22px;
+    }
+
+    .terminal-body {
+        font-size: 12px;
+    }
+
+    .lights span {
+        width: 9px;
+        height: 13px;
+    }
+}
